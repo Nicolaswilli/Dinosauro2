@@ -1,70 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.utfpr.willi.dinosauro2.controle.FXMLPrincipalController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.utfpr.willi.dinosauro2.controle.FXMLPrincipalController">
    <children>
       <MenuBar>
         <menus>
-            <Menu fx:id="mInicio" mnemonicParsing="false" text="Inicio" />
+            <Menu fx:id="mInicio" mnemonicParsing="false" text="Inicio">
+               <items>
+                  <MenuItem fx:id="MiVoltaInicio" mnemonicParsing="false" onAction="#voltaHome" text="Voltar" />
+               </items></Menu>
           <Menu mnemonicParsing="false" text="Cadastro">
             <items>
-              <MenuItem fx:id="miCadastroEspecie" mnemonicParsing="false" text="Especie" />
-                  <MenuItem fx:id="miCadastroHabitat" mnemonicParsing="false" text="Habitat" />
-                  <MenuItem fx:id="miCadastroLocomocao" mnemonicParsing="false" text="Locomoçao" />
-                  <MenuItem fx:id="miCadastroPeriodo" mnemonicParsing="false" text="Periodo" />
-                  <MenuItem fx:id="miCadastroTaxonomia" mnemonicParsing="false" text="Taxonomia" />
+              <MenuItem fx:id="miCadastroEspecie" mnemonicParsing="false" onAction="#handlerCadEspecie" text="Especie" />
+                  <MenuItem fx:id="miCadastroHabitat" mnemonicParsing="false" onAction="#handleCadHabitat" text="Habitat" />
+                  <MenuItem fx:id="miCadastroLocomocao" mnemonicParsing="false" onAction="#handleCadLocomocao" text="Locomoçao" />
+                  <MenuItem fx:id="miCadastroPeriodo" mnemonicParsing="false" onAction="#handleCadPeriodo" text="Periodo" />
+                  <MenuItem fx:id="miCadastroTaxonomia" mnemonicParsing="false" onAction="#handleCadTaxonomia" text="Taxonomia" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Atualizar">
+          <Menu mnemonicParsing="false" text="Atualizar/Remover">
             <items>
-                  <MenuItem fx:id="miAtualizaEspecie" mnemonicParsing="false" text="Especie" />
-                  <MenuItem fx:id="miAtualizaHabitat" mnemonicParsing="false" text="Habitat" />
-                  <MenuItem fx:id="miAtualizaLocomocao" mnemonicParsing="false" text="Locomoçao" />
-                  <MenuItem fx:id="miAtualizaPeriodo" mnemonicParsing="false" text="Periodo" />
-                  <MenuItem fx:id="miAtualizaTaxonomia" mnemonicParsing="false" text="Taxonomia" />
+                  <MenuItem fx:id="miAtualizaEspecie" mnemonicParsing="false" onAction="#handleAtualizarEspecie" text="Especie" />
+                  <MenuItem fx:id="miAtualizaHabitat" mnemonicParsing="false" onAction="#handleAtualizarHabitat" text="Habitat" />
+                  <MenuItem fx:id="miAtualizaLocomocao" mnemonicParsing="false" onAction="#handleAtualizarLocomocao" text="Locomoçao" />
+                  <MenuItem fx:id="miAtualizaPeriodo" mnemonicParsing="false" onAction="#handleAtualizarPeriodo" text="Periodo" />
+                  <MenuItem fx:id="miAtualizaTaxonomia" mnemonicParsing="false" onAction="#handleAtualizarTaxonomia" text="Taxonomia" />
             </items>
           </Menu>
-            <Menu mnemonicParsing="false" text="Pesquisar">
+            <Menu mnemonicParsing="false" text="Todos Itens">
                <items>
-                  <Menu mnemonicParsing="false" text="Especie">
-                    <items>
-                      <MenuItem fx:id="miLisTodosEspecie" mnemonicParsing="false" text="Listar Todos" />
-                        <MenuItem fx:id="miLisUmEspecie" mnemonicParsing="false" text="Listar Um" />
-                    </items>
-                  </Menu>
-                  <Menu mnemonicParsing="false" text="Habitat">
-                     <items>
-                        <MenuItem fx:id="miLisTodosHabitat" mnemonicParsing="false" text="Listar Todos" />
-                        <MenuItem fx:id="miLisUmHabitat" mnemonicParsing="false" text="Listar Um" />
-                     </items>
-                  </Menu>
-                  <Menu mnemonicParsing="false" text="Locomocao">
-                     <items>
-                        <MenuItem fx:id="miLisTodosLocomocao" mnemonicParsing="false" text="Listar Todos" />
-                        <MenuItem fx:id="miLisUmLocomocao" mnemonicParsing="false" text="Listar Um" />
-                     </items>
-                  </Menu>
-                  <Menu mnemonicParsing="false" text="Periodo">
-                     <items>
-                        <MenuItem fx:id="miLisTodosPeriodo" mnemonicParsing="false" text="Listar Todos" />
-                        <MenuItem fx:id="miLisUmPeriodo" mnemonicParsing="false" text="Listar Um" />
-                     </items>
-                  </Menu>
-                  <Menu mnemonicParsing="false" text="Taxonomia">
-                     <items>
-                        <MenuItem fx:id="miLisTodosTaxonomia" mnemonicParsing="false" text="Listar Todos" />
-                        <MenuItem fx:id="miLisUmTaxonomia" mnemonicParsing="false" text="Listar Um" />
-                     </items>
-                  </Menu>
+                <MenuItem fx:id="miLisTodosEspecie" mnemonicParsing="false" onAction="#handlerListTodosEspecie" text="Especie" />
+                  <MenuItem fx:id="miLisTodosHabitat" mnemonicParsing="false" onAction="#handlerListTodosHabitat" text="Habitat" />
+                  <MenuItem fx:id="miLisTodosLocomocao" mnemonicParsing="false" onAction="#handlerListTodosLocomocao" text="Locomocao" />
+                  <MenuItem fx:id="miLisTodosPeriodo" mnemonicParsing="false" onAction="#handlerListTodosPeriodo" text="Periodo" />
+                  <MenuItem fx:id="miLisTodosTaxonomia" mnemonicParsing="false" onAction="#handlerListTodosTaxonomia" text="Taxonomia" />
                </items>
             </Menu>
         </menus>
       </MenuBar>
-      <AnchorPane fx:id="anchorPane" prefHeight="376.0" prefWidth="600.0" />
+      <AnchorPane fx:id="anchorPane" prefHeight="577.0" prefWidth="800.0">
+         <children>
+            <Group layoutX="105.0" layoutY="93.0">
+               <children>
+                  <Label alignment="BOTTOM_LEFT" contentDisplay="RIGHT" prefHeight="46.0" prefWidth="107.0" text="Save" textAlignment="CENTER">
+                     <font>
+                        <Font name="Liberation Sans" size="40.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="TOP_LEFT" contentDisplay="CENTER" layoutY="50.0" prefHeight="46.0" prefWidth="176.0" text="Dinosaur" textAlignment="CENTER">
+                     <font>
+                        <Font name="Liberation Sans" size="40.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Group>
+         </children>
+      </AnchorPane>
    </children>
 </VBox>

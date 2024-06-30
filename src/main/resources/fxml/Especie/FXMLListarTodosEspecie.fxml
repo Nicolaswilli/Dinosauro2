@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="577.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.utfpr.willi.dinosauro2.controle.Especie.FXMListarTodosEspecieController">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="166.0" layoutY="37.0" prefHeight="25.0" prefWidth="237.0" text="Tabela Especie Todos Valores" textAlignment="CENTER" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="20.0">
+         <font>
+            <Font name="Liberation Sans" size="20.0" />
+         </font>
+      </Label>
+      <TableView fx:id="TableViewTbEspecie" layoutX="38.0" layoutY="65.0" prefHeight="283.0" prefWidth="560.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="80.0">
+        <columns>
+          <TableColumn fx:id="TabColEspecieId" prefWidth="66.0" text="Id" />
+          <TableColumn fx:id="TabColEspecieNome" prefWidth="84.0" text="Nome" />
+            <TableColumn fx:id="TabColEspecieAlimentacao" prefWidth="114.0" text="Alimentação" />
+            <TableColumn fx:id="TabColEspecieTamMedio" prefWidth="131.0" text="Tamanho Médio" />
+            <TableColumn fx:id="TabColEspeciePesoMedio" prefWidth="85.0" text="Peso Médio" />
+            <TableColumn fx:id="TabColEspecieIdDataDesco" prefWidth="138.0" text="Data de Descoberta" />
+            <TableColumn fx:id="TabColEspecieEsqueletoCompleto" prefWidth="141.0" text="Esqueleto Completo" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

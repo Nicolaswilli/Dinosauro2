@@ -47,22 +47,11 @@ public class TbTaxonomiaDaoImpl implements TbTaxonomiaDao{
     public List<TbTaxonomia> listarTodos() {
         List<TbTaxonomia> taxonomias;
         
-        TypedQuery<TbTaxonomia> query = manager.createQuery("SELECT t FROM TbLocomocao t", TbTaxonomia.class);
+        TypedQuery<TbTaxonomia> query = manager.createQuery("SELECT t FROM TbTaxonomia t", TbTaxonomia.class);
         
         taxonomias = query.getResultList();
         
         return taxonomias;
     }
 
-    @Override
-    public TbTaxonomia listarUm(Long id) {
-        TbTaxonomia taxonomia;
-        
-        Query query = manager.createQuery("SELECT t FROM TbLocomocao t WHERE t.codigo = " + id);
-        
-        taxonomia = (TbTaxonomia)query.getSingleResult();
-        
-        return taxonomia;
-    }
-    
 }

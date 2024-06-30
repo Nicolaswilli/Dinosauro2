@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import java.util.List;
 
 /**
  *
@@ -34,10 +35,14 @@ public class TbHabitat {
     
     @Column(unique = true)
     private String geologia;
-    
-    @ManyToMany
-    private TbEspecie especie;
-    
+
+    @ManyToMany(mappedBy = "habitat")
+    private List<TbEspecie> especies;
+
+    public Long getId() {
+        return id;
+    }
+
     public String getNome() {
         return nome;
     }

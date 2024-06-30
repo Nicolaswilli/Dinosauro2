@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import java.util.List;
 
 /**
  *
@@ -26,18 +27,22 @@ public class TbPeriodo {
     @Column(unique = true)
     private String nome;
     
-    @Column(unique = true)
+    @Column()
     private Integer inicio;
     
-    @Column(unique = true)
+    @Column()
     private Integer fim;
     
-    @Column(unique = true)
+    @Column()
     private String evento_final;
     
     @ManyToMany
-    private TbTaxonomia taxonomia;
-    
+    private List<TbTaxonomia> taxonomia;
+
+    public Long getId() {
+        return id;
+    }
+
     public String getNome() {
         return nome;
     }

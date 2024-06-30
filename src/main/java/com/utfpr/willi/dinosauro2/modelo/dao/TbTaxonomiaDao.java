@@ -20,7 +20,5 @@ public interface TbTaxonomiaDao {
     void excluir(TbTaxonomia taxonomia);
     
     List<TbTaxonomia> listarTodos();
-    
-    TbTaxonomia listarUm(Long id);
-    
+
 }

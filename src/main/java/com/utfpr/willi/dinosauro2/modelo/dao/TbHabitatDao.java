@@ -20,7 +20,5 @@ public interface TbHabitatDao {
     void excluir(TbHabitat habitat);
     
     List<TbHabitat> listarTodos();
-    
-    TbHabitat listarUm(Long id);
-    
+
 }

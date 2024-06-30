@@ -20,7 +20,5 @@ public interface TbPeriodoDao {
     void excluir(TbPeriodo periodo);
     
     List<TbPeriodo> listarTodos();
-    
-    TbPeriodo listarUm(Long id);
-    
+
 }

@@ -20,7 +20,5 @@ public interface TbLocomocaoDao {
     void excluir(TbLocomocao locomocao);
     
     List<TbLocomocao> listarTodos();
-    
-    TbLocomocao listarUm(Long id);
-    
+
 }

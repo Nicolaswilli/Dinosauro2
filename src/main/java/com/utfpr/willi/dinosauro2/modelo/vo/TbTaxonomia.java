@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import java.util.List;
 
 /**
  *
@@ -32,11 +33,15 @@ public class TbTaxonomia {
     private TbEspecie especie;
     
     @OneToMany(mappedBy = "taxonomia")
-    private TbLocomocao tbLocomocao;
+    private List<TbLocomocao> tbLocomocao;
     
     @ManyToMany
-    private TbPeriodo periodo;
-    
+    private List<TbPeriodo> periodo;
+
+    public Integer getId() {
+        return id;
+    }
+
     public String getNome() {
         return nome;
     }

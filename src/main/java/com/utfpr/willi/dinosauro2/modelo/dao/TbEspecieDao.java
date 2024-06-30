@@ -21,8 +21,5 @@ public interface TbEspecieDao {
     
     List<TbEspecie> listarTodos();
     
-    TbEspecie listarUm(Long id);
-    
-    
 }
 

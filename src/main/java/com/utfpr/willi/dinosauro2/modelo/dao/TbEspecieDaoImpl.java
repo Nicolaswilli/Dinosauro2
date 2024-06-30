@@ -53,16 +53,5 @@ public class TbEspecieDaoImpl implements TbEspecieDao{
         
         return especies;
     }
-
-    @Override
-    public TbEspecie listarUm(Long id) {
-        TbEspecie especie;
-        
-        Query query = manager.createQuery("SELECT e FROM TbEspecie e WHERE e.codigo = " + id);
-        
-        especie = (TbEspecie)query.getSingleResult();
-        
-        return especie;
-    }
     
 }

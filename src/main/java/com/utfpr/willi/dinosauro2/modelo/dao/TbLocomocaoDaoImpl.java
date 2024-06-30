@@ -55,15 +55,4 @@ public class TbLocomocaoDaoImpl implements TbLocomocaoDao{
         return locomocoes;
     }
 
-    @Override
-    public TbLocomocao listarUm(Long id) {
-        TbLocomocao habitat;
-        
-        Query query = manager.createQuery("SELECT l FROM TbLocomocao l WHERE l.codigo = " + id);
-        
-        habitat = (TbLocomocao)query.getSingleResult();
-        
-        return habitat;
-    }
-    
 }

@@ -4,7 +4,7 @@
  */
 package com.utfpr.willi.dinosauro2.modelo.vo;
 
-import java.util.Date;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -22,7 +22,8 @@ import javax.persistence.TemporalType;
  */
 @Entity
 public class TbEspecie {
-    
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID_TbEspecie")
@@ -44,15 +45,18 @@ public class TbEspecie {
     private Boolean esqueleto_completo;
     
     @Column(nullable = false, unique = false)
-    @Temporal(TemporalType.DATE)
-    private Date data_descoberta;
-    
+    private String data_descoberta;
+
     @ManyToMany
-    private TbHabitat habitat;
+    private List<TbHabitat> habitat;
     
-    @OneToMany(mappedBy = "taxonomia")
-    private TbTaxonomia taxonomia;
-    
+    @OneToMany(mappedBy = "especie")
+    private List<TbTaxonomia> taxonomia;
+
+    public Long getId() {
+        return id;
+    }
+
     public Double getTamanho_medio() {
         return tamanho_medio;
     }
@@ -93,11 +97,11 @@ public class TbEspecie {
         this.esqueleto_completo = esqueleto_completo;
     }
 
-    public Date getData_descoberta() {
+    public String getData_descoberta() {
         return data_descoberta;
     }
 
-    public void setData_descoberta(Date data_descoberta) {
+    public void setData_descoberta(String data_descoberta) {
         this.data_descoberta = data_descoberta;
     }
     

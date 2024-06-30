@@ -4,18 +4,14 @@
  */
 package com.utfpr.willi.dinosauro2.modelo.vo;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 /**
  *
  * @author willi
  */
 @Entity
+@Table(name = "TbLocomocao")
 public class TbLocomocao {
     
     @Id
@@ -31,7 +27,11 @@ public class TbLocomocao {
     
     @ManyToOne()
     private TbTaxonomia taxonomia;
-    
+
+    public Long getId() {
+        return id;
+    }
+
     public String getNome() {
         return nome;
     }

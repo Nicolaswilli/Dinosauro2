@@ -47,24 +47,11 @@ public class TbPeriodoDaoImpl implements TbPeriodoDao{
     public List<TbPeriodo> listarTodos() {
         List<TbPeriodo> periodos;
         
-        TypedQuery<TbPeriodo> query = manager.createQuery("SELECT p FROM TbLocomocao p", TbPeriodo.class);
+        TypedQuery<TbPeriodo> query = manager.createQuery("SELECT p FROM TbPeriodo p", TbPeriodo.class);
         
         periodos = query.getResultList();
         
         return periodos;
     }
 
-    @Override
-    public TbPeriodo listarUm(Long id) {
-        TbPeriodo periodo;
-        
-        Query query = manager.createQuery("SELECT p FROM TbLocomocao p WHERE p.codigo = " + id);
-        
-        periodo = (TbPeriodo)query.getSingleResult();
-        
-        return periodo;
-    }
-    
-    
-    
 }

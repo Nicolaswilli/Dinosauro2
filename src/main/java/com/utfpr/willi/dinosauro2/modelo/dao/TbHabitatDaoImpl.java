@@ -54,15 +54,4 @@ public class TbHabitatDaoImpl implements TbHabitatDao{
         return habitates;
     }
 
-    @Override
-    public TbHabitat listarUm(Long id) {
-        TbHabitat habitat;
-        
-        Query query = manager.createQuery("SELECT h FROM TbHabitat h WHERE h.codigo = " + id);
-        
-        habitat = (TbHabitat)query.getSingleResult();
-        
-        return habitat;
-    }
-    
 }
