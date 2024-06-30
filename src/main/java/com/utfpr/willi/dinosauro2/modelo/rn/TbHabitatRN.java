@@ -38,10 +38,7 @@ public class TbHabitatRN {
     public void atualizar(TbHabitat habitat){
         tbHabitatDao.atualizar(habitat);
     }
-    
-    public TbHabitat listarUm(Long id){
-        return tbHabitatDao.listarUm(id);
-    }
+
     
     public List<TbHabitat> listarTodos(){
         return tbHabitatDao.listarTodos();

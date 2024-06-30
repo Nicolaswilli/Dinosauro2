@@ -39,10 +39,7 @@ public class TbEspecieRN {
     public void atualizar(TbEspecie especie){
         tbEspecieDao.atualizar(especie);
     }
-    
-    public TbEspecie listarUm(Long id){
-        return tbEspecieDao.listarUm(id);
-    }
+
     
     public List<TbEspecie> listarTodos(){
         return tbEspecieDao.listarTodos();

@@ -39,10 +39,7 @@ public class TbLocomocaoRN {
     public void atualizar(TbLocomocao locomocao){
         tbLocomocaoDao.atualizar(locomocao);
     }
-    
-    public TbLocomocao listarUm(Long id){
-        return tbLocomocaoDao.listarUm(id);
-    }
+
     
     public List<TbLocomocao> listarTodos(){
         return tbLocomocaoDao.listarTodos();

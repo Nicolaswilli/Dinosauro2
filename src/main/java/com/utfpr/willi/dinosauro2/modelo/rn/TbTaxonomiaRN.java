@@ -32,10 +32,7 @@ public class TbTaxonomiaRN {
     public void atualizar(TbTaxonomia taxonomia) {
         tbTaxonomiaDao.atualizar(taxonomia);
     }
-    
-    public TbTaxonomia listarUm(Long id) {
-        return tbTaxonomiaDao.listarUm(id);
-    }
+
     
     public List<TbTaxonomia> listarTodos() {
         return tbTaxonomiaDao.listarTodos();

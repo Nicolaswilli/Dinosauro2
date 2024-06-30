@@ -32,11 +32,7 @@ public class TbPeriodoRN {
     public void atualizar(TbPeriodo periodo) {
         tbPeriodoDao.atualizar(periodo);
     }
-    
-    public TbPeriodo listarUm(Long id) {
-        return tbPeriodoDao.listarUm(id);
-    }
-    
+
     public List<TbPeriodo> listarTodos() {
         return tbPeriodoDao.listarTodos();
     }
